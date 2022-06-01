@@ -28,3 +28,10 @@ jobs:
           push: true
           platforms: linux/arm64
           tags: iloveitaly/dreamhost-dns-updater:latest
+      -
+        name: Update repo description
+        uses: peter-evans/dockerhub-description@v2
+        with:
+          username: ${{ secrets.DOCKERHUB_USERNAME }}
+          password: ${{ secrets.DOCKERHUB_PASSWORD }}
+          repository: iloveitaly/dreamhost-dns-updater
