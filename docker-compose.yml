@@ -1,0 +1,10 @@
+version: "3.8"
+
+services:
+  dns_update:
+    image: "dreamhost-dns-updater"
+    restart: unless-stopped
+    environment:
+      - SCHEDULE="@hourly"
+      - DREAMHOST_UPDATE_DOMAIN="node.domain.com"
+      - DREAMHOST_API_KEY="key"
