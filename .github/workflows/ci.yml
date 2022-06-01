@@ -30,8 +30,8 @@ jobs:
           tags: iloveitaly/dreamhost-dns-updater:latest
       -
         name: Update repo description
-        uses: peter-evans/dockerhub-description@v2
+        uses: peter-evans/dockerhub-description@latest
         with:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
-          repository: iloveitaly/dreamhost-dns-updater
+          short-description: ${{ github.event.repository.description }}
