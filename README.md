@@ -7,6 +7,8 @@ local IP address of the container. Helpful for maintaining an external access po
 
 Checkout the `docker-compose.yml` file for usage information.
 
+https://hub.docker.com/r/iloveitaly/dreamhost-dns-updater
+
 ## Command Line Usage
 
 First, you need a [DreamHost API key](https://panel.dreamhost.com/?tree=home.api) with full DNS permissions.

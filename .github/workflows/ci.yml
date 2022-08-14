@@ -29,6 +29,7 @@ jobs:
           push: true
           platforms: linux/arm64
           tags: iloveitaly/dreamhost-dns-updater:latest
+
       -
         name: Update repo description
         uses: peter-evans/dockerhub-description@v3.0.0
