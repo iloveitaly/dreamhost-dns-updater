@@ -155,9 +155,9 @@ def make_it_so():
         sys.exit(msg)
     current_records = get_dns_records()
     DNS_IP = get_dns_ip(current_records)
-    logging.debug('DNS_IP: %s', DNS_IP)
+    logging.debug('Current DNS IP: %s', DNS_IP)
     IP_Addr = get_host_IP_Address()
-    logging.debug('IP_Addr: %s', IP_Addr)
+    logging.debug('Host IP Address: %s', IP_Addr)
     if DNS_IP != IP_Addr:
         logging.info('Address different, will try to update.')
         update_dns_record()
