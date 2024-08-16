@@ -1,5 +1,5 @@
 {
-  "description": "Update DNS records hosted on Dreamhost on a schedule",
+  "description": "Update DNS records hosted on Dreamhost on a schedule using a Docker container",
   "homepage": "https://github.com/iloveitaly/dreamhost-dns-updater",
   "keywords": [
     "docker",
