@@ -27,8 +27,8 @@ import os
 #### example.com or sub.exmple.com
 ####
 
-API_Key = os.getenv("DREAMHOST_API_KEY", "")
-domain = os.getenv("DREAMHOST_UPDATE_DOMAIN", "")
+API_Key = os.getenv("DREAMHOST_API_KEY")
+domain = os.getenv("DREAMHOST_UPDATE_DOMAIN")
 
 #### Set the logging level.
 logging.basicConfig(level=logging.INFO)
@@ -140,13 +140,11 @@ def update_dns_record(protocol="ip"):
 
 
 def make_url_string(command):
-    """ "str->str"""
     url = "/?key=" + API_Key + "&cmd=" + command + "&unique_id=" + rand_uuid()
     return url
 
 
 def speak_to_DH(command):
-    """str->str"""
     logging.debug(
         "Will try to speak to Dreamhost, here is what I will tell: %s", command
     )
@@ -165,7 +163,7 @@ def get_host_IP_Address(protocol="ip"):
     return IP_Addr
 
 
-def make_it_so():
+def update_dns_record_with_host_ip():
     global DNS_IP
     global DNS_IPV6
     global IP_Addr
@@ -193,6 +191,5 @@ def make_it_so():
             logging.info("IPv6 Record up-to-date.")
 
 
-#### Let's do it!
-
-make_it_so()
+if __name__ == "__main__":
+    update_dns_record_with_host_ip()

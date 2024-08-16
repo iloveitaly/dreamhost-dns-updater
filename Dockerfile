@@ -15,8 +15,6 @@ RUN set -eux; \
   apt-get clean;
 
 ENV SCHEDULE **None**
-ENV DREAMHOST_API_KEY ""
-ENV DREAMHOST_UPDATE_DOMAIN ""
 
 COPY . ./
 
