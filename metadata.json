@@ -1,0 +1,12 @@
+{
+  "description": "Update DNS records hosted on Dreamhost on a schedule",
+  "homepage": "https://github.com/iloveitaly/dreamhost-dns-updater",
+  "keywords": [
+    "docker",
+    "raspberry-pi",
+    "dns",
+    "dynamic-dns",
+    "dns-record",
+    "homelab"
+  ]
+}
