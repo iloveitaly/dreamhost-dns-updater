@@ -31,7 +31,10 @@ API_Key = os.getenv("DREAMHOST_API_KEY")
 domain = os.getenv("DREAMHOST_UPDATE_DOMAIN")
 
 #### Set the logging level.
-logging.basicConfig(level=logging.INFO)
+
+log_level = os.getenv("LOG_LEVEL", "INFO").upper()
+logging.basicConfig(level=getattr(logging, log_level, logging.INFO))
+
 # Set this to 1 or True or whatever if you want to update IPv6 record.
 CHECKIPV6 = 0
 
