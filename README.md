@@ -38,6 +38,12 @@ chmod +x ./dreampy_dns.py
 You can update your domain with an IPv6 (AAAA) record also, if you would like to do so.
 In that case, CHECKIPV6 variable must be set to anything other than the default 0.
 
+## Dreamhost API Can Block Your IP
+
+Their security systems seem less than great and they have blocked my residential IP. Contacting support fixes the issue, but they don't understand the problem at first.
+
+This is to say, if you are having trouble connecting to `https://api.dreamhost.com` it could be your specific residential IP address.
+
 ## Kudos
 
 The script was copied + modified from [this script](https://github.com/gsiametis/dreampy_dns)
