@@ -9,6 +9,13 @@ Checkout the `docker-compose.yml` file for usage information.
 
 https://hub.docker.com/r/iloveitaly/dreamhost-dns-updater
 
+Want to execute the script within a running docker container (for debugging):
+
+```shell
+docker exec -it 2fdea37c57e6 bash
+./dreampy_dns.py
+```
+
 ## Command Line Usage
 
 First, you need a [DreamHost API key](https://panel.dreamhost.com/?tree=home.api) with full DNS permissions.
