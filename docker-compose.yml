@@ -1,6 +1,6 @@
 services:
   dns_update:
-    image: "dreamhost-dns-updater"
+    image: iloveitaly/dreamhost-dns-updater:latest
     restart: unless-stopped
     environment:
       - SCHEDULE="@hourly"
