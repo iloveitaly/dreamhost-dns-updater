@@ -1,7 +1,7 @@
 # Usage:
 #   docker build -t dreamhost-dns-updater .
 
-FROM python:3.13.3
+FROM python:3.13.4
 
 LABEL maintainer="Michael Bianco <mike@mikebian.co>"
 
