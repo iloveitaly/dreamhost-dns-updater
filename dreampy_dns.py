@@ -1,21 +1,17 @@
 #!/usr/bin/env python3
 
-""" This is a simple python script for updating the
-    DNS Custom Records in Dreamhost Nameservers using
-    Dreamhost API commands.
+"""This is a simple python script for updating the
+DNS Custom Records in Dreamhost Nameservers using
+Dreamhost API commands.
 
-    Provided under the MIT License (MIT). See LICENSE for details.
+Provided under the MIT License (MIT). See LICENSE for details.
 
-    """
+"""
 
 # Python version check
 import sys
 import syslog
 
-if sys.version_info.major < 3:
-    msg = "Python 3 required. I refuse to run!"
-    syslog.syslog(syslog.LOG_ERR, msg)
-    sys.exit(msg)
 
 import urllib.request as urlr
 import uuid
@@ -33,7 +29,11 @@ domain = os.getenv("DREAMHOST_UPDATE_DOMAIN")
 #### Set the logging level.
 
 log_level = os.getenv("LOG_LEVEL", "INFO").upper()
-logging.basicConfig(level=getattr(logging, log_level, logging.INFO))
+logging.basicConfig(
+    level=getattr(logging, log_level, logging.INFO),
+    format="%(asctime)s - %(levelname)s - %(message)s",
+    datefmt="%Y-%m-%d %H:%M:%S",
+)
 
 # Set this to 1 or True or whatever if you want to update IPv6 record.
 CHECKIPV6 = 0
@@ -159,10 +159,10 @@ def speak_to_DH(command):
 
 def get_host_IP_Address(protocol="ip"):
     if protocol == "ipv6":
-        u = "http://api6.ipify.org"
+        u = "https://api6.ipify.org"
     else:
-        u = "http://api.ipify.org"
-    IP_Addr = urlr.urlopen(u).read().decode("UTF-8")
+        u = "https://checkip.amazonaws.com"
+    IP_Addr = urlr.urlopen(u).read().decode("UTF-8").strip()
     return IP_Addr
 
 
