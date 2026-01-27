@@ -1,1 +1,1 @@
-@hourly python dreampy_dns.py
+0 */6 * * * python dreampy_dns.py

@@ -1,4 +1,4 @@
-## Update Dreamhost DNS With Local IP
+\# Update Dreamhost DNS With Local IP
 
 Dockerfile & associated script for updating Dreamhost DNS A record on a domain with the
 local IP address of the container. Helpful for maintaining an external access point to a home network.
@@ -44,6 +44,16 @@ chmod +x ./dreampy_dns.py
 
 You can update your domain with an IPv6 (AAAA) record also, if you would like to do so.
 In that case, CHECKIPV6 variable must be set to anything other than the default 0.
+
+## Dreamhost Rate Limiting
+
+Looks like 500/day is the maximum number of calls you can make to the DNS API:
+
+```
+# # 2026-01-27T12:39:03.721465Z [error    ] add_record_failed               response='error\nslow_down_bucko\trate error: module dns used more than 500 times in 1 day(s)\n'
+```
+
+This is why the Cronfile is set to 4x/day
 
 ## Dreamhost API Can Block Your IP
 
