@@ -1,4 +1,4 @@
-\# Update Dreamhost DNS With Local IP
+# Update Dreamhost DNS With Local IP
 
 Dockerfile & associated script for updating Dreamhost DNS A record on a domain with the
 local IP address of the container. Helpful for maintaining an external access point to a home network.
